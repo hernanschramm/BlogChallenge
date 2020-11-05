@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Blog.Models.Post>
+
+@{
+    ViewBag.Title = "Listado de Post";
+
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo Post", "Create")
+</p>
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <b style="color:forestgreen; font-size:large; "> @Html.DisplayFor(modelItem => item.Titulo) </b> <br />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Categoria: <a href="~/Blog/@item.Categoria"> @Html.DisplayFor(modelItem => item.Categoria)</a>
+            </td>
+
+            <td>
+                Fecha de Creacion:  @Html.DisplayFor(modelItem => item.FechaDeCreacion)
+            </td>
+            <td>
+                @Html.ActionLink("Ver más", "Details", new { id = item.Id })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+
+            </td>
+            <td>
+            </td>
+
+        </tr>
+        
+    }
+
+</table>

@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<Blog.Models.Post>
+
+@{
+    ViewBag.Title = "Otro";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <b style="color:aqua; font-size:large; ">  @Html.DisplayFor(modelItem => item.Titulo)</b> <br />
+                @Html.DisplayFor(modelItem => item.Contenido)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Categoria: <a href="~/Blog/@item.Categoria"> @Html.DisplayFor(modelItem => item.Categoria)</a>
+            </td>
+            <td>
+            </td>
+            <td>
+                Fecha de Creacion:  @Html.DisplayFor(modelItem => item.FechaDeCreacion)
+            </td>
+
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Volver a la pagina principal", "Index")
+</div>
