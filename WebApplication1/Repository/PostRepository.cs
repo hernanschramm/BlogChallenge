@@ -23,6 +23,21 @@ namespace WebApplication1.Repository
         }
 
 
+        public List<Post> TraerACTIVOS()
+        {
+            using (var db = new BlogContext())
+            {
+
+                return db.blogPosts.Where(o => o.Estado == true).OrderByDescending(x => x.FechaDeCreacion).ToList();
+
+
+            }
+
+        }
+
+
+
+
         //public void BuscarNombre(Post Filtros)
         //{
         //    using (var db = new BlogContext())
@@ -36,7 +51,7 @@ namespace WebApplication1.Repository
         //        {
         //            return db.blogPosts.Take(5).ToList();
 
-                  
+
 
         //        }
 

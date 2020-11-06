@@ -75,11 +75,12 @@ namespace WebApplication1.Controllers
             }
         }
         #endregion
-        #region Crear
+        #region C
         // GET: Blog/Create
         public ActionResult Create()
         {
-            return View();
+            Post myNewPost = new Post(); 
+            return View(myNewPost);
         }
 
         // POST: Blog/Create
