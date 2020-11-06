@@ -42,7 +42,9 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                return View(db.blogPosts.Take(5).ToList());
+                var model = _repo.TraerTodos();
+                return View(model);
+                //return View(db.blogPosts.Take(5).ToList());
             }
 
 
@@ -122,7 +124,7 @@ namespace WebApplication1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Titulo,Contenido,Imagen,Categoria,FechaDeCreacion")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Titulo,Contenido,Imagen,Categoria,FechaDeCreacion,Estado")] Post post)
         {
             if (ModelState.IsValid)
             {

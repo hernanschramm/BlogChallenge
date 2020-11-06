@@ -13,8 +13,12 @@
     <div class="col-6">
         <h2 class="text-primary"> Lista de Blogs </h2>
     </div>
+    <p>
+        <a href="@Url.Action("Create","Blog")" class="btn btn-primary">Create New</a>
+    </p>
+
     <div class="col-6 text-right">
-        <a class="btn btn-primary" asp-action="Create"> <i class="fas fa-plus"></i> Crear Nuevo</a>
+        <a href="@Url.Action("Create","Blog")" class="btn btn-primary" asp-action="Create"> <i class="fas fa-plus"></i> Crear Nuevo</a>
     </div>
 </div>
 
@@ -59,9 +63,9 @@
             </td>
         
             <td>
-                @Html.ActionLink("Ver más", "Details", new { id = item.Id })
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
-                @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                @Html.ActionLink("Ver", "Details", new { id = item.Id },new {@class="btn btn-info" })|
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })|
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })|
 
             </td>
             <td>
