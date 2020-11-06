@@ -28,5 +28,8 @@ namespace Blog.Models
         public Nullable<System.DateTime> FechaDeCreacion { get; set; }
         public byte[] Imagen { get; set; }
 
+        [Required]
+        public bool Estado { get; set; }
+
     }
 }

@@ -28,30 +28,38 @@
         <th>
             @Html.DisplayNameFor(model => model.Imagen)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contenido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaDeCreacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imagen)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.Id })
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Titulo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Contenido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Categoria)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaDeCreacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Imagen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estado)
+    </td>
+
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+</tr>
     }
 
 </table>

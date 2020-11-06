@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
 
             if (!string.IsNullOrEmpty(Filtros))
             {
-                var query= db.blogPosts.Where(o => o.Titulo.Contains(Filtros)).ToList();
+                var query = db.blogPosts.Where(o => o.Titulo.Contains(Filtros)).ToList();
                 return View(query);
             }
             else
@@ -45,9 +45,9 @@ namespace WebApplication1.Controllers
                 return View(db.blogPosts.Take(5).ToList());
             }
 
-         
 
-        
+
+
 
 
         }

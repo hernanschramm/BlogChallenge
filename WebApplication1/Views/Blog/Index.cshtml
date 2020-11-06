@@ -1,17 +1,22 @@
 ﻿@model IEnumerable<Blog.Models.Post>
 
 @{
-    ViewBag.Title = "Listado de Post";
+   
 
 }
 
 <h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Crear nuevo Post", "Create")
-</p>
 
 
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary"> Lista de Blogs </h2>
+    </div>
+    <div class="col-6 text-right">
+        <a class="btn btn-primary" asp-action="Create"> <i class="fas fa-plus"></i> Crear Nuevo</a>
+    </div>
+</div>
 
 
     <form asp-controller="BlogController" asp-action="Index">
@@ -40,6 +45,19 @@
             <td>
                 Fecha de Creacion:  @Html.DisplayFor(modelItem => item.FechaDeCreacion)
             </td>
+
+            <td>
+                @if (item.Estado == true)
+                {
+                    <p>Activo</p>
+                }
+                else
+                {
+                    <p>Inactivo</p>
+                }
+
+            </td>
+        
             <td>
                 @Html.ActionLink("Ver más", "Details", new { id = item.Id })
                 @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
