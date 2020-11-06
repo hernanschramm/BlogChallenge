@@ -10,6 +10,17 @@
 <p>
     @Html.ActionLink("Crear nuevo Post", "Create")
 </p>
+
+
+
+
+    <form asp-controller="BlogController" asp-action="Index">
+    <p>
+        Titulo: <input type="text" name="Filtros">
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
 <table class="table">
 
 
@@ -39,7 +50,7 @@
             </td>
 
         </tr>
-        
+
     }
 
 </table>

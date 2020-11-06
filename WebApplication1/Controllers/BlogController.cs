@@ -1,4 +1,5 @@
 ﻿using Blog.Models;
+using OpenXmlPowerTools;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,6 +15,7 @@ namespace WebApplication1.Controllers
 {
     public class BlogController : Controller
     {
+        private BlogContext db = new BlogContext();
         #region Atributos 
         private PostRepository _repo;
         #endregion
@@ -26,10 +28,28 @@ namespace WebApplication1.Controllers
         #region Index       
         // GET: Blog
 
-        public ActionResult Index()
+        public ActionResult Index(string Filtros)
+
+
         {
-            var model = _repo.TraerTodos();
-            return View(model);
+            //var model = _repo.TraerTodos();
+            //return View(model);
+
+            if (!string.IsNullOrEmpty(Filtros))
+            {
+                var query= db.blogPosts.Where(o => o.Titulo.Contains(Filtros)).ToList();
+                return View(query);
+            }
+            else
+            {
+                return View(db.blogPosts.Take(5).ToList());
+            }
+
+         
+
+        
+
+
         }
 
         #endregion

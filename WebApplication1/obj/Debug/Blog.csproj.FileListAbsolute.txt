@@ -272,3 +272,8 @@ D:\BLOG-ALKEMY\WebApplication1\obj\Debug\Blog.csproj.CoreCompileInputs.cache
 D:\BLOG-ALKEMY\WebApplication1\obj\Debug\Blog.csproj.CopyComplete
 D:\BLOG-ALKEMY\WebApplication1\obj\Debug\WebApplication1.dll
 D:\BLOG-ALKEMY\WebApplication1\obj\Debug\WebApplication1.pdb
+D:\BLOG-ALKEMY\WebApplication1\bin\DocumentFormat.OpenXml.dll
+D:\BLOG-ALKEMY\WebApplication1\bin\OpenXmlPowerTools.dll
+D:\BLOG-ALKEMY\WebApplication1\bin\System.IO.Packaging.dll
+D:\BLOG-ALKEMY\WebApplication1\bin\System.Management.Automation.dll
+D:\BLOG-ALKEMY\WebApplication1\bin\DocumentFormat.OpenXml.xml
