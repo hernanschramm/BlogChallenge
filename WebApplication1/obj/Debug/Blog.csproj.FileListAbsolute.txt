@@ -277,3 +277,5 @@ D:\BLOG-ALKEMY\WebApplication1\bin\System.Management.Automation.dll
 D:\BLOG-ALKEMY\WebApplication1\bin\DocumentFormat.OpenXml.xml
 D:\BLOG-ALKEMY\WebApplication1\obj\Debug\WebApplication1.Migrations.inicio.resources
 D:\BLOG-ALKEMY\WebApplication1\obj\Debug\Blog.csproj.GenerateResource.cache
+D:\BLOG-ALKEMY\WebApplication1\bin\DryIoc.dll
+D:\BLOG-ALKEMY\WebApplication1\bin\DryIoc.xml

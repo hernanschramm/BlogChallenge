@@ -1,8 +1,10 @@
 ﻿using Blog.Models;
+using ImTools;
 using OpenXmlPowerTools;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -18,6 +20,9 @@ namespace WebApplication1.Controllers
         private BlogContext db = new BlogContext();
         #region Atributos 
         private PostRepository _repo;
+
+       
+
         #endregion
         #region Constructor
         public BlogController()
@@ -83,14 +88,46 @@ namespace WebApplication1.Controllers
             return View(myNewPost);
         }
 
+
+        public ActionResult convertirImagen(int CodigoCliente)
+        {
+            var imagenCliente = db.blogPosts.Where(z => z.Id == CodigoCliente).FirstOrDefault();
+            return File(imagenCliente.Imagen, "image/jpeg");
+        }
+
+
+
         // POST: Blog/Create
         [HttpPost]
-        public ActionResult Create(Post model)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Post model, HttpPostedFileBase imagenCliente)
         {
+            //HttpPostedFileBase File = Request.Files["ImageData"];
+            //Byte[] imageBytes = ConvertToBytes(upload);
+
+            if (imagenCliente != null && imagenCliente.ContentLength > 0)
+            {
+                byte[] imageData = null;
+                using (var binaryReader = new BinaryReader(imagenCliente.InputStream))
+                {
+                    imageData = binaryReader.ReadBytes(imagenCliente.ContentLength);
+                }
+                //setear la imagen a la entidad que se creara
+                model.Imagen = imageData;
+            }
+
+
+
+
+
             try
             {
                 if (ModelState.IsValid)
                 {
+
+                                  
+                   
+
                     _repo.Alta(model);
                     return RedirectToAction("Index");
                 }
@@ -123,10 +160,29 @@ namespace WebApplication1.Controllers
 
         }
 
+
+      
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Titulo,Contenido,Imagen,Categoria,FechaDeCreacion,Estado")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Titulo,Contenido,Imagen,Categoria,FechaDeCreacion,Estado")] Post post, HttpPostedFileBase imagenCliente)
         {
+
+
+            if (imagenCliente != null && imagenCliente.ContentLength > 0)
+            {
+                byte[] imageData = null;
+                using (var binaryReader = new BinaryReader(imagenCliente.InputStream))
+                {
+                    imageData = binaryReader.ReadBytes(imagenCliente.ContentLength);
+                }
+                //setear la imagen a la entidad que se creara
+               post.Imagen = imageData;
+            }
+
             if (ModelState.IsValid)
             {
                 using (var db = new BlogContext())
