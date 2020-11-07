@@ -168,7 +168,7 @@ namespace WebApplication1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Titulo,Contenido,Imagen,Categoria,FechaDeCreacion,Estado")] Post post, HttpPostedFileBase imagenCliente)
+        public ActionResult Edit([Bind(Include = "Id,Titulo,Contenido,Categoria,FechaDeCreacion,Estado")] Post post, HttpPostedFileBase imagenCliente)
         {
 
 

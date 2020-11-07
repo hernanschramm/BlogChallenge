@@ -12,7 +12,7 @@
     <hr />
 
     <dl class="dl-horizontal">
-       
+
         <dt>
             @Html.DisplayNameFor(model => model.Titulo)
         </dt>
@@ -59,6 +59,13 @@
 
         <dd>
             @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+
+       
+
+        <dd>
+            <img width="50" height="50" src="@Url.Action("convertirImagen", "Blog", new {CodigoCliente = Model.Id})" />
         </dd>
 
     </dl>
