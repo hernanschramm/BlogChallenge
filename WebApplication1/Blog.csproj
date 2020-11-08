@@ -154,9 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011061321188_inicio.cs" />
-    <Compile Include="Migrations\202011061321188_inicio.designer.cs">
-      <DependentUpon>202011061321188_inicio.cs</DependentUpon>
+    <Compile Include="Migrations\202011080245392_primero.cs" />
+    <Compile Include="Migrations\202011080245392_primero.designer.cs">
+      <DependentUpon>202011080245392_primero.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BlogContext.cs" />
@@ -329,8 +329,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011061321188_inicio.resx">
-      <DependentUpon>202011061321188_inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011080245392_primero.resx">
+      <DependentUpon>202011080245392_primero.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

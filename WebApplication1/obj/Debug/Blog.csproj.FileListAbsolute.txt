@@ -275,7 +275,7 @@ D:\BLOG-ALKEMY\WebApplication1\bin\OpenXmlPowerTools.dll
 D:\BLOG-ALKEMY\WebApplication1\bin\System.IO.Packaging.dll
 D:\BLOG-ALKEMY\WebApplication1\bin\System.Management.Automation.dll
 D:\BLOG-ALKEMY\WebApplication1\bin\DocumentFormat.OpenXml.xml
-D:\BLOG-ALKEMY\WebApplication1\obj\Debug\WebApplication1.Migrations.inicio.resources
-D:\BLOG-ALKEMY\WebApplication1\obj\Debug\Blog.csproj.GenerateResource.cache
 D:\BLOG-ALKEMY\WebApplication1\bin\DryIoc.dll
 D:\BLOG-ALKEMY\WebApplication1\bin\DryIoc.xml
+D:\BLOG-ALKEMY\WebApplication1\obj\Debug\WebApplication1.Migrations.primero.resources
+D:\BLOG-ALKEMY\WebApplication1\obj\Debug\Blog.csproj.GenerateResource.cache
